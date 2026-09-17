@@ -1,0 +1,41 @@
+name: DevOps Quick Demo
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: pytest
+
+      - name: Build Docker image
+        run: docker build -t devops-quick-demo:${{ github.sha }} .
+
+      - name: Run container
+        run: |
+          docker run -d \
+            --name devops-quick-demo \
+            -p 8001:8000 \
+            devops-quick-demo:${{ github.sha }}
+
+      - name: Test container
+        run: |
+          sleep 3
+          curl --fail http://localhost:8001/health
