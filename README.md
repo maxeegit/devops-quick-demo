@@ -168,7 +168,7 @@ This project complements my larger AWS Cloud Security / DevSecOps project by dem
 
 ## 👤 Author
 
-**Ayoola Bolarinwa**
+**Emmanuel Bolarinwa**
 
 Cloud Security | DevSecOps | GRC & Technology Risk
 
