@@ -170,7 +170,7 @@ This project complements my larger AWS Cloud Security / DevSecOps project by dem
 
 **Emmanuel Bolarinwa**
 
-Cloud Security | DevSecOps | GRC & Technology Risk
+Cloud Security | DevSecOps | DevOps
 
 ### Areas of Interest
 
